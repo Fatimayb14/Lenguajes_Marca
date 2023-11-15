@@ -1,0 +1,103 @@
+/* SELECTORES */
+/*
+SELECTOR UNIVERSAL: *
+Hacer que todos los elementos de la página se muestren con el tipo de letra Arial
+*/
+*{
+	font-family: Arial;
+	
+}
+
+/*
+SELECTOR DE ELEMENTO: Selecciona todos los elementos de la etiqueta definida.
+Se puede indicar más de un elemento separados por ,
+
+-Los títulos h1 deben salir en azul: Reglas de un ELEMENTO
+-Los títulos h1 y el footer deben salir centrados: Regla de dos elementos 
+*/
+h1{
+	color:blue;
+}
+h1,footer{
+	text-align:center;
+}
+/* SELECTOR DE CLASE:
+Selecciona todos los elementos de la clase especificada
+Es posible combinarlo con el selector de elemento:elemento.clase
+
+-Todos los elementos de la clase resaltar deben aparecer en negrita
+-Los párrafos de la clase resaltar deben aparecer subrayados
+*/
+.resaltar{
+	font-weight:bold;
+}
+p.resltar{
+	text-decoration: underline; 
+}
+
+/*
+SELECTOR DE ID: #
+Selecciona el elemnto(solamente debería haber 1) cuyo el id es el seleccionado
+
+-Mostrar los id pie en color silver
+*/
+#pie{
+	color:silver;
+}
+/*
+SELECTOR DE LIMITACIÓN: es un espacio en blanco.Selecciona todos los elementos (hijos)
+que están dentro de otro (padre). NO TIENEN POR QUÉ SER HIJOS DIRECTOS 
+
+-El mapa del sitio debe salir en diferente color según el nivel de la viñeta. Rojo,Verde,Azul
++/
+ul.mapa{
+	color: red;
+
+}
+ul.mapa ul{
+	color:green;
+}
+ul.mapa ul ul {
+	color:blue;
+	
+}
+/*
+SELECTOR DE ATRIBUTO: [atributo] [atributo="valor"]
+Se puede poner solamente que exista el atributo [atributo] o que además se cheque el valor [atributo="valor"]
+
+-Las viñetas que contenga el atributo type y el valor round deben aparecer en negrita 
+-Cualquier viñeta que contenga el atributo type debe aparecer en cursiva 
+-Los ul de la clase mapa y de tipo round deben tener un borde negro de 1 pixel
+*/
+ul[type]{
+	font-style: italic;
+}
+
+
+ul[type="round"] {
+	font-weight: bold;
+}
+ul[type="round"][class="mapa"]{
+	border: 1px solid black
+	
+}
+/*
+SELECTOR JERÁRQUICO: 
+etil> Hijos DIRECTOS
+etil+Hermanos DIRECTO
+etil~Hermanos 
+etil:first_child primer hijo 
+etil:last_child último hijos
+etil:.empty Elementos vacíos 
+
+-Los ul que sean hijos directos de un ul de clase mapa deben aperecer subrayados 
+-Los ul hermanos directos de a deben salir subrayado
+*/
+ul.mapa>ul{
+	text-decoration:underline;
+	
+}
+a+h1{
+	text-decoration:underline;
+	
+}
